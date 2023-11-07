@@ -4,6 +4,7 @@ import employee.Employee;
 import observers.DatabaseObserver;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -16,6 +17,8 @@ import register_entry.RegisterEntryNull;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
+
+import static org.mockito.ArgumentMatchers.any;
 
 // Run with PowerMock, an extended version of Mockito
 @RunWith(PowerMockRunner.class)
@@ -106,6 +109,8 @@ public class RegistrationDB_UTest
         database.addPropertyChangeListener("data", observer);
         database.addEntry(mockEmployee1, mockRegisterEntry1);
         database.addEntry(Bart, Entry2);
+
+        Mockito.verify(observer, Mockito.times(2)).propertyChange(any());
 
     }
 }
