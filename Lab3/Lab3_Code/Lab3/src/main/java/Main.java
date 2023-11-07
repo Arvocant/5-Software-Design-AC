@@ -6,6 +6,7 @@ import employee.CustomerService;
 import employee.Employee;
 import employee.Manager;
 import employee.Programmer;
+import factory.EmployeeFactory;
 import register_entry.RegisterEntry;
 
 public class Main
@@ -29,6 +30,8 @@ public class Main
         Employee e1 = new Programmer("Alice");
         Employee e2 = new CustomerService("Bob");
         Employee e3 = new Manager("Charlie");
+
+        //EmployeeFactory employee = new EmployeeFactory().getEmployee();
 
         register.checkIn(e1);
         register.checkIn(e2);

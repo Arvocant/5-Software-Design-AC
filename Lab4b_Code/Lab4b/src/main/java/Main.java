@@ -1,6 +1,7 @@
+import factory.AbstractTeslaFactory;
 import factory.FactoryProvider;
-import factory.TeslaFactory;
 import tesla.Tesla;
+import tesla.model_3.Model3_Factory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +34,10 @@ public class Main
         // "factory" does not exist yet, you have to obtain it via the specific Factories
 
         // Via FactoryProvider: Get factory for Tesla Model S
-        Tesla apollo = factory.getBlackCar("Apollo");
-        Tesla athena = factory.getRedCar("Athena");
+        AbstractTeslaFactory model3 = FactoryProvider.yourNewFactory("model3");
+
+        Tesla apollo = model3.getBlackCar("Apollo");
+        Tesla athena = model3.getRedCar("Athena");
 
         teslaList.add(apollo);
         teslaList.add(athena);

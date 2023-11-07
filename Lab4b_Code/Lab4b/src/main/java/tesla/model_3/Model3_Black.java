@@ -7,4 +7,5 @@ public class Model3_Black extends Model3
         super(name);
         this.color = "Black";
     }
+
 }
