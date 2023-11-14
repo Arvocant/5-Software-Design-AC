@@ -34,26 +34,36 @@ public class Main
         // "factory" does not exist yet, you have to obtain it via the specific Factories
 
         // Via FactoryProvider: Get factory for Tesla Model S
-        AbstractTeslaFactory model3 = FactoryProvider.yourNewFactory("model3");
+        AbstractTeslaFactory modelS = FactoryProvider.yourNewFactory("model3");
 
-        Tesla apollo = model3.getBlackCar("Apollo");
-        Tesla athena = model3.getRedCar("Athena");
+        assert modelS != null;
+        Tesla apollo = modelS.getBlackCar("Apollo");
+        Tesla athena = modelS.getRedCar("Athena");
 
         teslaList.add(apollo);
         teslaList.add(athena);
 
         // Via FactoryProvider: Get factory for Tesla Model 3
-        Tesla elon = factory.getRedCar("Elon");
-        Tesla musk = factory.getBlackCar("Musk");
+        AbstractTeslaFactory model3 = FactoryProvider.yourNewFactory("model3");
+
+        assert model3 != null;
+        Tesla elon = model3.getRedCar("Elon");
+        Tesla musk = model3.getBlackCar("Musk");
 
         teslaList.add(elon);
         teslaList.add(musk);
 
         // Via FactoryProvider: Get factory for Tesla Model X
-        Tesla olympus = factory.getRedCar("Olympus");
+        AbstractTeslaFactory modelX = FactoryProvider.yourNewFactory("model3");
+
+        assert modelX != null;
+        Tesla olympus = modelX.getRedCar("Olympus");
 
         // Via FactoryProvider: Get factory for Tesla Model Y
-        Tesla zeus = factory.getBlackCar("Zeus");
+        AbstractTeslaFactory modelY = FactoryProvider.yourNewFactory("model3");
+
+        assert modelY != null;
+        Tesla zeus = modelY.getBlackCar("Zeus");
 
         teslaList.add(olympus);
         teslaList.add(zeus);
